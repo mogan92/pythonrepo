@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+</head>
+<body>
+    <h1> pythontable data </h1>
+
+    <a href="/newuser">NEW USER</a> <a href="/deleteuser">DELETE USER</a>
+<form>
+    <table>
+        <tr>
+            <th>emp_id</th>
+            <th>emp_name</th>
+            <th>salary</th>
+        </tr>
+        {% for row in data %}
+            <tr>
+                <td>{{row.employee_id}}</td>
+                <td>{{row.employee_name}}</td>
+                <td>{{row.salary}}</td>
+                <td><a href="{{url_for('edituser',id=row.employee_id)}}">Update</a></td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</form>
+</body>
+</html>
